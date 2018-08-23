@@ -5,9 +5,9 @@
 			templateUrl: '/templates/btnTimer.html',
 			scope: {},
 			link: function(scope, element, attrs) {
-				var WORK_TIME = 10;
-				var BREAK_TIME = 5;
-				var LONG_BREAK = 10;
+				var WORK_TIME = 1500;
+				var BREAK_TIME = 300;
+				var LONG_BREAK = 1800;
 	
 				var countdown;
 
@@ -17,6 +17,16 @@
 				scope.onBreak = false;
 				scope.running = false;
 				scope.completed_sessions = 0;
+
+				var mySound = new buzz.sound("/sounds/ding-sound.mp3", {
+		             preload: true
+		         });
+
+				scope.$watch('currentTime', function() {
+					if(scope.currentTime === 0) {
+						mySound.play();
+					}
+				});
 
 
 				function startTimer() {
@@ -69,11 +79,7 @@
 		            startTimer();
 		          }
 		        };
-
 			}
-
-			
-
 		}
 			
 	};
