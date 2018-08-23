@@ -3,6 +3,7 @@
 		return {
 			restrict: 'E',
 			templateUrl: '/templates/btnTimer.html',
+			scope: {},
 			link: function(scope, element, attrs) {
 				const WORK_TIME = 10;
 				const BREAK_TIME = 5;
@@ -15,60 +16,42 @@
 				scope.running = false;
 
 				function startTimer() {
-					scope.currentTime = WORK_TIME;
 					scope.btnStatus = 'Reset';
 					scope.running = true;
-					scope.onBreak = false;
-
 					countdown = $interval(function() {
 						if (scope.currentTime > 0) {
 							scope.currentTime--;
-							scope.onBreak = false;
 						} else {
-							scope.onBreak = true;
+							if(scope.onBreak == false) {
+								scope.currentTime = BREAK_TIME;
+								scope.btnStatus = "Give yourself a break!";
+								scope.onBreak = true;
+							} else if(scope.onBreak == true) {
+								scope.currentTime = WORK_TIME;
+								scope.btnStatus = "Let's get back to work!";
+								scope.onBreak = false;
+							}
 							stopTimer();
 						}
 					}, 1000);
 				};
+
 
 				function stopTimer() {
 					scope.running = false;
-					if (angular.isDefined(countdown) && scope.onBreak == false) {
+					if (scope.onBreak == true) {
 						$interval.cancel(countdown);
 						countdown = undefined;
 						scope.btnStatus = "Give yourself a break!";	
-						scope.currentTime = WORK_TIME;
-					} else if (angular.isDefined(countdown) && scope.onBreak == true) {
+						scope.currentTime = BREAK_TIME;
+					} else if (scope.onBreak == false) {
+						$interval.cancel(countdown);
 						scope.btnStatus = "Start working again!";
 						scope.currentTime = WORK_TIME;
+						countdown = undefined;
+						
 					}
 				};
-
-				function startBreak() {
-					scope.onBreak = true;
-					scope.btnStatus= "Let's Take a Break!";
-					scope.currentTime = BREAK_TIME;
-
-					countdown = $interval(function() {
-						if (scope.currentTime > 0 && scope.running) {
-							scope.currentTime--;
-						} else {
-							stopTimer();
-						}
-					}, 1000);
-					
-				};
-
-
-				function resetTimer() {
-					scope.running = false;
-					scope.currentTime = WORK_TIME;
-					scope.onBreak = false;
-
-					$interval.cancel(countdown); // TODO: understand
-					countdown = undefined;
-					scope.btnStatus = "Start Working Session";
-				}
 
 				scope.start = function() {
 		          if (countdown) {
