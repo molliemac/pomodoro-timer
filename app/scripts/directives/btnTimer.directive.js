@@ -1,5 +1,5 @@
 (function() {
-	function btnTimer($interval) {
+	function btnTimer($interval, Tasks) {
 		return {
 			restrict: 'E',
 			templateUrl: '/templates/btnTimer.html',
@@ -86,5 +86,5 @@
 
 	angular
 		.module('pomodoroTimer')
-		.directive('btnTimer', ['$interval', btnTimer] );
+		.directive('btnTimer', ['$interval', 'Tasks', btnTimer] );
 })();
