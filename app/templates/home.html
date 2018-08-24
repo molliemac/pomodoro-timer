@@ -1,17 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4" id="sidebar">
-			<h3>Task History</h3>
-			<form ng-submit="addTask()">
-				<div class="form-group">
-			    	<input type="text" class="form-control" id="newTask" ng-model="name" placeholder="Task name">
-			  	</div>
-			  	<button type="submit" class="btn btn-primary">Add Task</button>
-			  	{{name}}
-			</form>
-			<ul class="task-list">
-				<li ng-repeat="task in tasks">{{name}}</li>
-			</ul>
+			<new-task></new-task>
 		</div>
 		<div class="col-md-8">
 			<btn-timer></btn-timer>

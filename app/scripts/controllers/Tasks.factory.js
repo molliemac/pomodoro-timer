@@ -5,7 +5,10 @@
     var tasks = $firebaseArray(ref);
 
     return {
-    	all: tasks
+    	all: tasks,
+      create: function(newTask) {
+        tasks.$add(newTask);
+      }
     };
   }
 

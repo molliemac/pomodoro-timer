@@ -1,10 +1,10 @@
 <h3>Task History</h3>
-<form>
-	<div class="form-group">
-    	<input type="text" class="form-control" id="newTask" ng-model="newTask.name" placeholder="Task name">
-  	</div>
-  	<button type="submit" class="btn btn-primary">Add Task</button>
-</form>
-<ul class="task-list">
-	<li ng-repeat="task in tasks">{{task.name}}</li>
-</ul>
+	<form ng-submit="create(task)">
+		<div class="form-group">
+	    	<input type="text" class="form-control" id="newTask" ng-model="task" placeholder="Task name">
+	  	</div>
+	  	<button type="submit" class="btn btn-primary">Add Task</button>
+	</form>
+	<ul class="task-list">
+		<li ng-repeat="task in tasks">{{task.$value}}</li>
+	</ul>
