@@ -14,6 +14,7 @@
 				scope.currentTime = WORK_TIME;
 
 				scope.btnStatus="Start Working Session";
+				scope.pauseStatus = "Pause";
 				scope.onBreak = false;
 				scope.running = false;
 				scope.completed_sessions = 0;
@@ -51,6 +52,16 @@
 					}, 1000);
 				};
 
+				scope.pauseTimer = function() {
+					if (scope.running == false) {
+						startTimer();
+						scope.pauseStatus = "Pause";
+					} else if (scope.running == true) {
+						$interval.cancel(countdown);
+						scope.running = false;
+						scope.pauseStatus = "Resume";	
+					}
+				};
 
 				function stopTimer() {
 					if (scope.onBreak == false) {
@@ -68,7 +79,8 @@
 						$interval.cancel(countdown);
 						countdown = undefined;
 						scope.btnStatus = "Give yourself a break!";
-					}
+						scope.running = false;
+					}	
 					
 				}
 

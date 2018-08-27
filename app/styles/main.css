@@ -7,8 +7,25 @@
 #sidebar {
 	background-color: #FFA300;
 	color: #FFFFFF;
+	padding: 0px;
 }
 
 #sidebar li {
 	color: #FFFFFF;
+	list-style-type: none;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 10px;
+}
+
+#sidebar li:hover {
+	background: #FEA000;
+	cursor: pointer;
+}
+
+#sidebar ul {
+	padding: 0px;
+}
+
+.task-container {
+	padding: 10px;
 }

@@ -4,6 +4,7 @@
 			<h4>It's Working Time!</h4>
 			<div class="clock">{{currentTime | prettyTimeFilter}}</div>
 			<button type="button" class="btn-primary btn-lg" ng-show="!onBreak" ng-click="start()">{{btnStatus}}</button>
+			<button type="button" class="btn-dark btn-lg" ng-click="pauseTimer()">{{pauseStatus}}</button>
 		</div>
 		<div ng-show="onBreak">
 			<h4>Break Time!</h4>
