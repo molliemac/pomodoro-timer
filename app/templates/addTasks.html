@@ -6,5 +6,5 @@
 	  	<button type="submit" class="btn btn-primary">Add Task</button>
 	</form>
 	<ul class="task-list">
-		<li ng-repeat="task in tasks | orderBy: 'date'">{{task.$value}}</li>
+		<li ng-repeat="task in tasks | orderBy: '-$id'">{{task.$value}}</li>
 	</ul>
