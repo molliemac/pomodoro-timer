@@ -4,13 +4,13 @@
 			<h3>Task History</h3>
 			<form ng-submit="addTask()">
 				<div class="form-group">
-			    	<input type="text" class="form-control" id="newTask" ng-model="name" placeholder="Task name">
+			    	<input type="text" class="form-control" id="newTask" ng-model="newTask" placeholder="Task name">
 			  	</div>
 			  	<button type="submit" class="btn btn-primary">Add Task</button>
-			  	{{name}}
+			  	{{newTask}}
 			</form>
 			<ul class="task-list">
-				<li ng-repeat="task in tasks">{{name}}</li>
+				<li ng-repeat="task in tasks">{{newTask}}</li>
 			</ul>
 		</div>
 		<div class="col-md-8">

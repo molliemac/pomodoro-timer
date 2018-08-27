@@ -1,14 +1,11 @@
 (function() {
   function TaskCtrl($scope, Tasks) {
     $scope.tasks = Tasks.all;
-    
 
     $scope.addTask = function() {
-      $scope.tasks.$add({
-        name: $scope.taskName
-      });
+      Tasks.addTask(newTask);
+      $scope.newTask = '';
 
-      $scope.taskName = "";
     };
 
   }
