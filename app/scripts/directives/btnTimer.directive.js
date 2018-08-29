@@ -18,6 +18,7 @@
 				scope.onBreak = false;
 				scope.running = false;
 				scope.completed_sessions = 0;
+				scope.currentTask = "list";
 
 				var mySound = new buzz.sound("/sounds/ding-sound.mp3", {
 		             preload: true
@@ -92,6 +93,9 @@
 		          }
 		        };
 			}
+
+			
+
 		}
 			
 	};

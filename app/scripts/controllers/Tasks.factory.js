@@ -8,6 +8,9 @@
     	all: tasks,
       create: function(newTask) {
         tasks.$add(newTask);
+      },
+      findTasks: function(taskId) {
+      return $firebaseArray(ref.equalTo(taskId));
       }
     };
   }

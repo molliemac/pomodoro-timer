@@ -1,11 +1,36 @@
+body {
+	font-family: 'Quicksand', sans-serif;
+	color: #FFFFFF;
+}
+
+button#start {
+	background: #F67280;
+	border-color: #F67280;
+}
+
+button#submit {
+	background: #343F4F;
+	border-color: #343F4F;
+}
+
+.clock {
+	font-size: 84px;
+	color: #FFFFFF;
+}
+
+.container-fluid {
+	background-color: #343F4F;
+}
+
 .timer {
 	margin: 0 auto;
-	background-color: #eeeeee;
-	padding: 20px;
+	background-color: #343F4F;
+	height: 100vh;
+	margin-top: 50px;
 }
 
 #sidebar {
-	background-color: #FFA300;
+	background-color: #F37272;
 	color: #FFFFFF;
 	padding: 0px;
 }
@@ -14,16 +39,20 @@
 	color: #FFFFFF;
 	list-style-type: none;
 	border-bottom: 1px solid #FFFFFF;
-	padding: 10px;
+	padding: 10px 0;
 }
 
 #sidebar li:hover {
-	background: #FEA000;
+	background: #0D5B85;
 	cursor: pointer;
 }
 
 #sidebar ul {
-	padding: 0px;
+	padding: 20px 0 0px;
+}
+
+.sessions {
+	padding-top: 30px;
 }
 
 .task-container {
