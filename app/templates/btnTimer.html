@@ -13,4 +13,8 @@
 		</div>
 			
 		<h4 class="sessions">Completed Sessions: {{completed_sessions}}</h4>
+		<div ng-show="currentTask" >
+			<h3 class="task-title">CurrentTask: {{ currentTask.$value }}</h3>
+		</div>
+		
 	</div>

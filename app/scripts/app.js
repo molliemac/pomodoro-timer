@@ -11,6 +11,12 @@
 				url: '/',
 				controller: 'TaskCtrl', 
 				templateUrl: '/templates/home.html'
+			}),
+		$stateProvider
+			.state('tasks', {
+				url: '/task/:taskName',
+				controller: 'TaskCtrl',
+
 			});
 	}
 	angular

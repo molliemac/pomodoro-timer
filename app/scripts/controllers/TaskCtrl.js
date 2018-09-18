@@ -9,9 +9,8 @@
 
     };
 
-    $scope.setCurrentTask = function (task) {
-      $scope.currentTask = task;
-      $scope.tasks = Tasks.getByTaskId($scope.currentTask.$id);
+    $scope.clearTask = function(task) {
+      $scope.allTasks.$remove(task);
     };
 
   }

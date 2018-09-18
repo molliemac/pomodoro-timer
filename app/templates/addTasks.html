@@ -7,8 +7,9 @@
 	  	<button type="submit" id="submit" class="btn btn-primary">Add Task</button>
 	</form>
 	<ul class="task-list">
-		<li ng-repeat="task in tasks | orderBy: '-$id'"><a ng-click="setCurrentTask(task)" >{{task.$value}}</a></li>
+		<!-- <li ng-repeat="task in tasks | orderBy: '-$id'"><a ng-click="setCurrentTask(task)">{{task.$value}}</a><i class="far fa-trash-alt"></i></li> -->
+		<li>
+            <a ng-repeat="task in tasks | orderBy: '-$id'" ng-click="setCurrentTask(task)">{{ task.$value }}</a>
+        </li>
 	</ul>
-
-	<h3>{{currentTask.$value}}</h3>
 </div>

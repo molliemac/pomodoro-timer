@@ -6,13 +6,25 @@
 			scope: {},
 			link: function(scope, element, attrs) {
 				scope.tasks = Tasks.all;
-    
+				scope.currentTask = null;
+
 
 			    scope.create = function(task) {
 			      Tasks.create(task);
 
 			      scope.task = "";
 			    };
+
+			    scope.delete = function(task) {
+			      Tasks.delete(task);
+			    };
+
+			    // scope.setCurrentTask = function(task) {
+			    //   scope.currentTask = task;
+			    //   scope.tasks = Tasks.findTasks(scope.currentTask.$id);
+			    // };
+
+
 			}
 		}
 			
