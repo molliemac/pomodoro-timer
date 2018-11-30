@@ -4,16 +4,20 @@
 
     $scope.addTask = function() {
       Tasks.addTask($scope.newTaskName);
+      console.log('selected', $scope.newTaskName);
     };
+
+    $scope.setCurrentTask = function(task) {
+      $scope.selectedTask = task;
+    };
+
+    $scope.getCurrentTask = function() {
+      return 'CURRENT TASK';
+    }
 
     $scope.clearTask = function(task) {
       $scope.allTasks.$remove(task);
     };
-
-    $scope.setCurrentTask = function(task) {
-      $scope.currentTask = task;
-      console.log('$scope.currentTask', task);
-    }
 
     $scope.markCompleted = function (task) {
       Tasks.markCompleted(task);

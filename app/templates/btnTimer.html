@@ -1,6 +1,5 @@
-<div class="timer text-center">
+
 		<h2>Pomodoro Timer</h2>
-		<h3>{{currentTask.name}}</h3>
 		<div ng-show="!onBreak">
 			<div class="clock">{{currentTime | prettyTimeFilter}}</div>
 			<button type="button" id="start" class="btn-primary btn-lg" ng-show="!onBreak" ng-click="start()">{{btnStatus}}</button>
@@ -14,7 +13,6 @@
 			
 		<h4 class="sessions">Completed Sessions: {{completed_sessions}}</h4>
 		<div>
-			<h3 class="task-title" current-task="currentTask"></h3>
+			<h3 class="task-title">Current Task: {{task}}</h3>
 		</div>
-		
-	</div>
+

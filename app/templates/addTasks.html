@@ -9,8 +9,8 @@
 	<ul class="task-list">
 		<!-- <li ng-repeat="task in tasks | orderBy: '-$id'"><a ng-click="setCurrentTask(task)">{{task.$value}}</a><i class="far fa-trash-alt"></i></li> -->
 		<li>
-            <a ng-repeat="task in tasks | orderBy: '-$id'" ng-click="selectTask()">{{task.name}}</a>
+            <a ng-repeat="task in tasks | orderBy: '-$id'" ng-click="setCurrentTask(task)">{{task.name}}</a>
         </li>
 	</ul>
-	<h3 current-task="currentTask"></h3>
+	<h3>Current Task: {{task}}</h3>
 </div>
