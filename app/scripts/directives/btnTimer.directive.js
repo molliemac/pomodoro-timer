@@ -3,7 +3,10 @@
 		return {
 			restrict: 'E',
 			templateUrl: '/templates/btnTimer.html',
-			scope: {},
+			controller: 'TaskCtrl',
+			scope: {
+				currentTask: '='
+			},
 			link: function(scope, element, attrs) {
 				var WORK_TIME = 1500;
 				var BREAK_TIME = 300;
@@ -18,6 +21,7 @@
 				scope.onBreak = false;
 				scope.running = false;
 				scope.completed_sessions = 0;
+				scope.currentTask = Tasks.getSelected();
 				 
 				var mySound = new buzz.sound("/sounds/ding-sound.mp3", {
 		             preload: true
@@ -31,6 +35,7 @@
 
 
 				function startTimer() {
+					console.log('TAsks', scope.currentTask);
 					scope.btnStatus = 'Reset';
 					scope.running = true;
 					countdown = $interval(function() {
