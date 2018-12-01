@@ -20,6 +20,7 @@ button#submit {
 
 .jumbotron-fluid {
 	background-color: #343F4F;
+	padding: 20px;
 }
 
 .timer {
@@ -29,31 +30,21 @@ button#submit {
 	margin-top: 50px;
 }
 
-.task-list {
+.task-list{
 	background-color: #F37272;
 	color: #FFFFFF;
 	padding: 0px;
 }
-.task-list li a {
-	display: block;
-	color: #FFFFFF;
-	text-decoration: none;
-}
 
-.task-list li > a {
-	color: #FFFFFF;
-	list-style-type: none;
+
+.row.task-list {
 	border-bottom: 1px solid #FFFFFF;
-	padding: 10px 0;
+	padding: 10px 0px;
 }
 
-.task-list li>a:hover {
-	background: #0D5B85;
+a.task-item:hover {
 	cursor: pointer;
-}
-
-.task-list ul {
-	padding: 20px 0 0px;
+	color: #343F4F;
 }
 
 .sessions {

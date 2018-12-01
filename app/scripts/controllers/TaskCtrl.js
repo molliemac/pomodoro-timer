@@ -2,9 +2,10 @@
   function TaskCtrl($scope, Tasks) {
     $scope.tasks = Tasks.all;
 
-    $scope.addTask = function() {
-      Tasks.addTask($scope.newTaskName);
-      console.log('selected', $scope.newTaskName);
+    $scope.addTask = function(task) {
+      Tasks.create($scope.newTaskName);
+      $scope.currentTask = task;
+      console.log('selected', $scope.currentTask);
     };
 
     $scope.setCurrentTask = function(task) {

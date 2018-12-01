@@ -1,11 +1,10 @@
 (function() {
 	function btnTimer($interval, Tasks) {
 		return {
-			restrict: 'E',
+			restrict: 'EA',
 			templateUrl: '/templates/btnTimer.html',
-			controller: 'TaskCtrl',
 			scope: {
-				
+				currentTask: '='
 			},
 			link: function(scope, element, attrs) {
 				var WORK_TIME = 1500;
@@ -15,7 +14,6 @@
 				var countdown;
 
 				scope.currentTime = WORK_TIME;
-				scope.task = scope.newTaskName;
 
 				scope.btnStatus="Start Working Session";
 				scope.pauseStatus = "Pause";

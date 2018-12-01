@@ -1,18 +1,13 @@
-
-		<h2>Pomodoro Timer</h2>
-		<div ng-show="!onBreak">
-			<div class="clock">{{currentTime | prettyTimeFilter}}</div>
-			<button type="button" id="start" class="btn-primary btn-lg" ng-show="!onBreak" ng-click="start()">{{btnStatus}}</button>
-			<button type="button" id="pause" class="btn-dark btn-lg" ng-click="pauseTimer()">{{pauseStatus}}</button>
-		</div>
-		<div ng-show="onBreak">
-			<h4>Break Time!</h4>
-			<div class="clock">{{currentTime | prettyTimeFilter}}</div>
-			<button type="button" id="start" class="btn-primary btn-lg" ng-show="onBreak" ng-click="start()">{{btnStatus}}</button>
-		</div>
-			
-		<h4 class="sessions">Completed Sessions: {{completed_sessions}}</h4>
-		<div>
-			<h3 class="task-title">Current Task: {{task}}</h3>
-		</div>
-
+<h2>Pomodoro Timer</h2>
+	<div ng-show="!onBreak">
+		<div class="clock">{{currentTime | prettyTimeFilter}}</div>
+		<button type="button" id="start" class="btn-primary btn-lg" ng-show="!onBreak" ng-click="start()">{{btnStatus}}</button>
+		<button type="button" id="pause" class="btn-dark btn-lg" ng-click="pauseTimer()">{{pauseStatus}}</button>
+	</div>
+	<div ng-show="onBreak">
+		<h4>Break Time!</h4>
+		<div class="clock">{{currentTime | prettyTimeFilter}}</div>
+		<button type="button" id="start" class="btn-primary btn-lg" ng-show="onBreak" ng-click="start()">{{btnStatus}}</button>
+	</div>
+		
+	<h4 ng-show="currentTask.selected" class="sessions">Current Task: {{currentTask.name}} | Completed Sessions: {{currentTask.workingSessions}}</h4>
