@@ -5,7 +5,16 @@
 	  	</div>
 	  	<button type="submit" id="submit" class="btn btn-primary">Add Task</button>
 	</form>
-		<div class="row task-list" ng-repeat="task in tasks | orderBy: '-$id'">
+		<div class="row task-list" ng-repeat="task in tasks | orderBy: '-$id'" ng-show="!currentTask.isComplete">
+			<div class="col-md-8">
+				<a class="task-item" ng-click="setCurrentTask(task)">{{task.name}}</a>
+			</div>
+			<div class="col-md-4">
+				Not Completed
+			</div>		
+        </div>
+        <div class="row pt-10" ng-repeat="task in tasks" ng-if="currentTask.isComplete">
+        	<h3>Completed Tasks:</h3>
 			<div class="col-md-8">
 				<a class="task-item" ng-click="setCurrentTask(task)">{{task.name}}</a>
 			</div>
@@ -14,6 +23,6 @@
 			</div>		
         </div>
 
-	<h3>Current Task: {{currentTask.name}}</h3>
+	
 
 

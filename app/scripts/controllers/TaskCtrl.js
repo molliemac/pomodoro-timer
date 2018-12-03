@@ -12,16 +12,8 @@
       $scope.selectedTask = task;
     };
 
-    $scope.getCurrentTask = function() {
-      return 'CURRENT TASK';
-    }
-
     $scope.clearTask = function(task) {
       $scope.allTasks.$remove(task);
-    };
-
-    $scope.markCompleted = function (task) {
-      Tasks.markCompleted(task);
     };
   }
 

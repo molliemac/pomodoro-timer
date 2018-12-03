@@ -12,14 +12,7 @@
           isComplete: false,
           workingSessions: 0
         });
-      },
-      findTasks: function(taskId) {
-      return $firebaseArray(ref.equalTo(taskId));
-      },
-      updateTask: function(task) {
-        console.log(ref.child(task['$id']));
-        ref.child(task['$id'].update({isComplete: true}));
-      } 
+      }
     };
   }
 
