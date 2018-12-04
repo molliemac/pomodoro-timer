@@ -1,7 +1,9 @@
 body {
 	font-family: 'Quicksand', sans-serif;
 	color: #FFFFFF;
+	background-color: #F37272;
 }
+
 
 button#start {
 	background: #F67280;

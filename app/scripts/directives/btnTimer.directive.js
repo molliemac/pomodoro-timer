@@ -6,6 +6,7 @@
 			scope: {
 				currentTask: '='
 			},
+			controller: 'TaskCtrl',
 			link: function(scope, element, attrs) {
 				var WORK_TIME = 1500;
 				var BREAK_TIME = 300;

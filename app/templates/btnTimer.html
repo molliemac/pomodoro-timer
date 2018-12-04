@@ -1,23 +1,27 @@
-<h2>Pomodoro Timer</h2>
-	<div ng-show="!onBreak">
-		<div class="clock">{{currentTime | prettyTimeFilter}}</div>
-		<button type="button" id="start" class="btn-primary btn-lg" ng-show="!onBreak" ng-click="start()">{{btnStatus}}</button>
-		<button type="button" id="pause" class="btn-dark btn-lg" ng-click="pauseTimer()">{{pauseStatus}}</button>
+<div class="jumbotron-fluid text-center">
+	<div class="container">
+	<h2>Pomodoro Timer</h2>
+		<div ng-show="!onBreak">
+			<div class="clock">{{currentTime | prettyTimeFilter}}</div>
+			<button type="button" id="start" class="btn-primary btn-lg" ng-show="!onBreak" ng-click="start()">{{btnStatus}}</button>
+			<button type="button" id="pause" class="btn-dark btn-lg" ng-click="pauseTimer()">{{pauseStatus}}</button>
 
-	</div>
-	<div ng-show="onBreak">
-		<h4>Break Time!</h4>
-		<div class="clock">{{currentTime | prettyTimeFilter}}</div>
-		<button type="button" id="start" class="btn-primary btn-lg" ng-show="onBreak" ng-click="start()">{{btnStatus}}</button>
-	</div>
-	<div ng-show="currentTask.selected">
-		<h4 class="sessions">Current Task: {{currentTask.name}} | Completed Sessions: {{currentTask.workingSessions}}</h4>
-		<div class="form-check">
-		  <input ng-model="currentTask.isComplete" ng-change="tasks.$save(currentTask)" class="form-check-input" type="checkbox" value="" id="completedCheckbox">
-		  <label class="form-check-label" for="defaultCheck1">
-		    Mark this task as complete?
-		  </label>
-		  status: {{currentTask.isComplete}}
+		</div>
+		<div ng-show="onBreak">
+			<h4>Break Time!</h4>
+			<div class="clock">{{currentTime | prettyTimeFilter}}</div>
+			<button type="button" id="start" class="btn-primary btn-lg" ng-show="onBreak" ng-click="start()">{{btnStatus}}</button>
+		</div>
+		<div ng-show="currentTask.selected && !currentTask.isComplete">
+			<h4 class="sessions">Current Task: {{currentTask.name}}</h4>
+			<div class="form-check">
+			  <input ng-model="currentTask.isComplete" ng-change="tasks.$save(currentTask)" class="form-check-input" type="checkbox" value="" id="completedCheckbox">
+			  <label class="form-check-label" for="defaultCheck1">
+			    Mark this task as complete?
+			  </label>
+			  status: {{currentTask.isComplete}}
+			</div>
 		</div>
 	</div>
+</div>
 	

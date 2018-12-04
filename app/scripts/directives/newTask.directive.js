@@ -10,7 +10,7 @@
 			    scope.create = function(task) {
 			      Tasks.create(task);
 			      scope.currentTask = task;
-			      console.log('scope.task', scope.currentTask);
+			      scope.task = "";
 			    };
 
 			    scope.delete = function(task) {
@@ -22,6 +22,10 @@
 			     scope.currentTask.selected = true;
 			      console.log('currentTask', scope.currentTask);
 			    };
+
+			    scope.displayTasks = function() {
+			    	console.log('all tasks', scope.tasks);
+			    }
 
 			}
 		}

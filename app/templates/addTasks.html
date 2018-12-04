@@ -1,28 +1,44 @@
-<h3>Task History</h3>
-	<form ng-submit="create(task)">
-		<div class="form-group">
-	    	<input type="text" class="form-control" id="newTask" ng-model="task" placeholder="Task name">
-	  	</div>
-	  	<button type="submit" id="submit" class="btn btn-primary">Add Task</button>
-	</form>
-		<div class="row task-list" ng-repeat="task in tasks | orderBy: '-$id'" ng-show="!currentTask.isComplete">
-			<div class="col-md-8">
-				<a class="task-item" ng-click="setCurrentTask(task)">{{task.name}}</a>
+<div class="task-list mt-5">
+	<div class="container">
+		<form ng-submit="create(task)">
+			<div class="form-row">
+				<div class="col-10">
+					<input type="text" class="form-control" id="newTask" ng-model="task" placeholder="Task name">
+				</div>
+				<div class="col-2">
+		  			<button type="submit" id="submit" class="btn btn-primary">Add Task</button>
+		  		</div>
 			</div>
-			<div class="col-md-4">
-				Not Completed
-			</div>		
-        </div>
-        <div class="row pt-10" ng-repeat="task in tasks" ng-if="currentTask.isComplete">
-        	<h3>Completed Tasks:</h3>
-			<div class="col-md-8">
-				<a class="task-item" ng-click="setCurrentTask(task)">{{task.name}}</a>
-			</div>
-			<div class="col-md-4">
-				Not Completed
-			</div>		
-        </div>
-
+		    	
+		</form>
+	        <div class="my-3 p-3 bg-white rounded box-shadow">
+		        <h6 class="border-bottom border-gray text-muted pb-2 mb-0">Tasks In Progress:</h6>
+		        <div class="media text-muted pt-3" ng-repeat="task in tasks | orderBy: '-$id'" ng-if="!task.isComplete"  >
+		          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+		            <div class="col-md-8">
+						<a class="task-item" ng-click="setCurrentTask(task)">{{task.name}}</a>
+					</div>
+					<div class="col-md-4">
+						Status: Not Completed
+					</div>	
+		          </p>
+		    </div>
+      </div>
+      	<div class="my-3 p-3 bg-white rounded box-shadow">
+	        <h6 class="border-bottom border-gray text-muted pb-2 mb-0">Completed Tasks:</h6>
+	        <div class="media text-muted pt-3" ng-repeat="task in tasks | orderBy: '-$id'" ng-if="task.isComplete">
+	          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+	            <div class="col-md-8">
+					<p class="task-item">{{task.name}}</p>
+				</div>
+				<div class="col-md-4">
+					Status: Completed
+				</div>	
+	          </p>
+		</div>
+</div>
+<button type="submit" id="submit" class="btn btn-primary" ng-click="displayTasks()">show Tasks</button>
+</div>
 	
 
 
