@@ -20,7 +20,6 @@
 			    scope.setCurrentTask = function(task) {
 			     scope.currentTask = task;
 			     scope.currentTask.selected = true;
-			      console.log('currentTask', scope.currentTask);
 			    };
 	   
 			}
