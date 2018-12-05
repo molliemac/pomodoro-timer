@@ -21,8 +21,6 @@
 				scope.onBreak = false;
 				scope.running = false;
 				scope.completed_sessions = 0;
-				
-				
 				 
 				var mySound = new buzz.sound("/sounds/ding-sound.mp3", {
 		             preload: true
@@ -34,7 +32,16 @@
 					}
 				});
 
+				scope.$watch('currentTask', function(newValue, oldValue) {
+					if(newValue && !newValue.isComplete) {
+						scope.currentTime = WORK_TIME;
+						scope.btnStatus="Start Working Session";
+						$interval.cancel(countdown);
+						countdown = undefined;
+					} 
+				});
 
+				
 				function startTimer() {
 					scope.btnStatus = 'Reset';
 					scope.running = true;
@@ -97,9 +104,6 @@
 		          }
 		        };
 			}
-
-			
-
 		}
 			
 	};

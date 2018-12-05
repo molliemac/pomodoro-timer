@@ -22,11 +22,7 @@
 			     scope.currentTask.selected = true;
 			      console.log('currentTask', scope.currentTask);
 			    };
-
-			    scope.displayTasks = function() {
-			    	console.log('all tasks', scope.tasks);
-			    }
-
+	   
 			}
 		}
 			

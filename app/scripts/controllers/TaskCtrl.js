@@ -6,7 +6,6 @@
       Tasks.create($scope.newTaskName);
       $scope.currentTask = task;
       $scope.currentTask = "";
-      console.log('selected', $scope.currentTask);
     };
 
     $scope.setCurrentTask = function(task) {
